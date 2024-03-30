@@ -1,11 +1,19 @@
-/* eslint-disable */
-import "bootstrap";
-import "./style.css";
+function GenerarDom() {
+  let subject = ["the", "our"];
+  let adj = ["great", "big"];
+  let predicate = ["jogger", "racoon"];
+  let ext = [".com", ".net", ".es"];
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+  let myDomain = [];
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+  for (let x = 0; x < subject.length; x++) {
+    for (let i = 0; i < adj.length; i++) {
+      for (let j = 0; j < predicate.length; j++) {
+        for (let b = 0; b < ext.length; b++) {
+          myDomain.push(`${subject[x]}${adj[i]}${predicate[j]}${ext[b]}`);
+        }
+      }
+    }
+  }
+  document.getElementById("domain").innerHTML = myDomain.join("<br>");
+}
